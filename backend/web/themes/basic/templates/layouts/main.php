@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $content string */
 
 
-if (Yii::$app->controller->action->id === 'login') { 
+if (Yii::$app->controller->action->id === 'login') {
 /**
  * Do not use this code in your template. Remove it. 
  * Instead, use the code  $this->layout = '//main-login'; in your controller.
@@ -36,7 +36,18 @@ if (Yii::$app->controller->action->id === 'login') {
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="hold-transition skin-blue sidebar-mini <?= $_COOKIE['sidebar-status']; ?>">
+    <?php
+        $this->registerJs('
+            $(document).on("click",$.AdminLTE.options.sidebarToggleSelector,function(){
+                if($("body").hasClass("sidebar-collapse")){
+                    $.cookie("sidebar-status","sidebar-collapse");
+                }else{
+                    $.cookie("sidebar-status","sidebar-open");
+                }
+            });
+        ');
+    ?>
     <?php $this->beginBody() ?>
     <div class="wrapper">
 

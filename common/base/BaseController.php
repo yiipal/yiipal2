@@ -6,7 +6,7 @@
  * @Date: 2016/3/3
  */
 
-namespace yiipal\base;
+namespace common\base;
 
 
 use yii\web\Controller;

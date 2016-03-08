@@ -25,7 +25,7 @@ $this->title = 'Form Builder';
                 <?= $form->field($model, 'name') ?>
                 <?= $form->field($model, 'data_label') ?>
                 <?= $form->field($model, 'data_description')->textarea()  ?>
-                <?= Html::submitButton('create',['class'=>'btn btn-primary']) ?>
+                <?= Html::submitButton('提交',['class'=>'btn btn-primary']) ?>
             </div>
             <?php ActiveForm::end(); ?>
         </div>
