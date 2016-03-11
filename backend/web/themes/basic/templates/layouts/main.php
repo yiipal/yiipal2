@@ -36,7 +36,7 @@ if (Yii::$app->controller->action->id === 'login') {
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini <?= $_COOKIE['sidebar-status']; ?>">
+    <body class="hold-transition skin-blue sidebar-mini <?= isset($_COOKIE['sidebar-status'])?$_COOKIE['sidebar-status']:'sidebar-collapse'; ?>">
     <?php
         $this->registerJs('
             $(document).on("click",$.AdminLTE.options.sidebarToggleSelector,function(){
